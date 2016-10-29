@@ -6,7 +6,6 @@ var spotify = require("../spotify/spotify");
 var needle = require("needle");
 var config = require("nconf");
 
-
 function getScript(response) {
     console.log("Request handler 'start' was called.");
     fs.readFile('./web/javascript/index.js', function (err, js) {
@@ -44,7 +43,8 @@ function start(response) {
 function search(response,request) {
    var searchObject = createSearchObject(querystring.parse(request),0);
     spotify.search(searchObject).then(function (data) {
-       response.end(JSON.stringify([[data,searchObject.type]]));
+        let time = Date.now() -data[1];
+       response.end(JSON.stringify([[data[0],searchObject.type,time]]));
    });
 }
 function multiSearch(response,request) {

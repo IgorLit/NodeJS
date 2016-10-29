@@ -80,7 +80,7 @@ $(function(){
         document.body.appendChild(tableObj);
     }
     function fillTable(articles) {
-        console.log(articles[0][1]+" "+articles.length);
+        console.log("Time:"+ articles[0][2]+" cache:"+articles[0][0]);
         //TODO adapt fillTable for multiple search.
         infoHTML = '';
         if(span!=null){

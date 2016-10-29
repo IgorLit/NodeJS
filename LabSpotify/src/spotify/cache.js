@@ -1,6 +1,7 @@
 /**
  * Created by SAD on 29.10.2016.
  */
+var cache = [];
 function addCache(name,type, res, liveTime) {
     var isDuplicate = true;
     if(typeof  type == "string"){
@@ -55,3 +56,23 @@ function addCache(name,type, res, liveTime) {
         }
     }
 }
+
+function checkCache(type,name,time) {
+    return new Promise(function(resolve, reject) {
+        var result=[];
+        for(var i=0;i<cache.length;i++){
+            for (var j=0;j<type.length;j++) {
+                if (cache[i].name == name && (cache[i].type == type[j]) && time < cache[i].liveTime) {
+                    result.push(cache[i].res);
+                    break;
+                }
+            }
+        }
+        if(result.length >0) resolve(result[0]);
+        else resolve(null);
+
+    });
+}
+
+exports.checkCache=checkCache;
+exports.addCache=addCache;
