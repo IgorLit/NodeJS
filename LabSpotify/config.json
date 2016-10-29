@@ -1,0 +1,11 @@
+{
+  "server":{
+    "host":"localhost",
+    "port": 8888
+  },
+  "spotify":{
+    "url": "https://api.spotify.com/v1/tracks",
+    "testGetTrack": "https://api.spotify.com/v1/tracks/0eGsygTp906u18L0Oimnem",
+    "urlTamplate": "https://api.spotify.com/v1/search?q=${searchStr}&type=${type}&limit=2"
+  }
+}

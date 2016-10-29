@@ -1,0 +1,9 @@
+.table tr td{
+   border:1px solid;
+}
+.limit{
+   width: 60px;
+}
+.error{
+   color: red;
+}

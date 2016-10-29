@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//code.jquery.com/jquery-1.12.3.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<H1> Search Spotify service:)</H1>
+<form name="search" action="/search" method="post">
+    <input type="text" name="limit" id="limit" value="4" class="limit">
+    <input id="searchString" name="searchString" type="search" placeholder="Search">
+    <select id="type" name="type"  multiple>
+        <option value="album">by album name</option>
+        <option value="artist">by artist name</option>
+        <option value="track">by song name</option>
+    </select>
+    <select id="mode" name="mode">
+        <option value="and">AND</option>
+        <option value="or">OR</option>
+    </select>
+    <input id="go" type="button" value="Search">
+</form>
+</body>
+</html>
