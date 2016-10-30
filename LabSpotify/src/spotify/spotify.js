@@ -5,7 +5,19 @@ var config = require("nconf");
 var cache = require("./cache");
 
 async function search(searchObj) {
-return await requestToSpotify(searchObj)
+    let arrive;
+    let result=null;
+     await rememberArrival().then(time=>arrive=time);
+        await cache.checkCache([searchObj.type],searchObj.searchString,Date.now()).then((res)=>{
+            if(res)
+                    result = [res,arrive];
+        });
+    if(result)
+        return new Promise((resolve)=>{
+            resolve(result);
+        });
+    else
+    return await requestToSpotify(searchObj,arrive)
 }
 
  async function multipleSearch(firstSearchObj,secondSearchObj,mode) {
@@ -28,16 +40,16 @@ function requestToSpotify(searchObj,startTime) {
             if (error)
                 reject(error);
             if(response) {
-               // cache.addCache(searchObj.searchString,searchObj.type,response.body,new Date().setMinutes(new Date().getMinutes() + 5));
+                cache.addCache(searchObj.searchString,searchObj.type,response.body,new Date().setMinutes(new Date().getMinutes() + 5));
                 resolve([response.body,startTime]);
             }
         });
     });
 }
-function rememberArrival() {
-    return new Promise(function (resolve,reject) {
+ function rememberArrival() {
+    return new Promise((resolve,reject)=>{
         resolve(Date.now());
-    })
+    });
 }
 
 function getUrl(searchString,type,limit) {
