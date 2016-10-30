@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b043c24c-fc4a-45f2-ba47-e51676549902" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
     </list>
     <ignored path="LabSpotify.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -327,7 +326,7 @@
       <workItem from="1477544241593" duration="13351000" />
       <workItem from="1477676779079" duration="3247000" />
       <workItem from="1477725616744" duration="7469000" />
-      <workItem from="1477828047843" duration="1625000" />
+      <workItem from="1477828047843" duration="1639000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1477828198463</created>
@@ -343,11 +342,18 @@
       <option name="project" value="LOCAL" />
       <updated>1477828421643</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="end gulp config">
+      <created>1477829685584</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1477829685584</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82725000" />
+    <option name="totallyTimeSpent" value="82739000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,7 +401,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="add gulp" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gulp" />
+    <MESSAGE value="end gulp config" />
+    <option name="LAST_COMMIT_MESSAGE" value="end gulp config" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
