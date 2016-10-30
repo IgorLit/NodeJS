@@ -8,7 +8,11 @@ async function search(searchObj) {
 return await requestToSpotify(searchObj)
 }
 
-function multipleSearch(firstSearchObj,secondSearchObj,mode) {
+ async function multipleSearch(firstSearchObj,secondSearchObj,mode) {
+  return await multipleRequestToSpotify(firstSearchObj,secondSearchObj,mode);
+}
+
+function multipleRequestToSpotify(firstSearchObj,secondSearchObj,mode) {
     let requests  = [
         needle.getAsync(getUrl(firstSearchObj.searchString,firstSearchObj.type, firstSearchObj.limit)),
         needle.getAsync(getUrl(secondSearchObj.searchString,secondSearchObj.type, secondSearchObj.limit))
@@ -17,7 +21,6 @@ function multipleSearch(firstSearchObj,secondSearchObj,mode) {
         return Promise.all(requests);
     else if(mode=="or")
         return Promise.any(requests);
-
 }
 function requestToSpotify(searchObj,startTime) {
     return new Promise((resolve,reject)=>{
