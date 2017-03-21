@@ -1,0 +1,225 @@
+---
+swagger: "2.0"
+info:
+  description: "A humans list API based on Swagger and built using NodeJS"
+  version: "v1"
+  title: "Contact List"
+host: "localhost"
+basePath: "/api"
+schemes:
+- "http"
+- "https"
+paths:
+  /humans:
+    get:
+      tags:
+      - "Humans"
+      operationId: "humans_get"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Human"
+      x-swagger-router-controller: "Humans"
+    post:
+      tags:
+      - "Humans"
+      operationId: "humans_post"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Human"
+      x-swagger-router-controller: "Humans"
+  /humans/{id}:
+    get:
+      tags:
+      - "Humans"
+      operationId: "humans_getById"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Human"
+      x-swagger-router-controller: "Humans"
+  /crimes:
+    get:
+      tags:
+      - "Crimes"
+      operationId: "crimes_get"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Crime"
+      x-swagger-router-controller: "Crimes"
+    post:
+      tags:
+      - "Crimes"
+      operationId: "crimes_postById"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Crime"
+      x-swagger-router-controller: "Crimes"
+  /crimes/{id}:
+    get:
+      tags:
+      - "Crimes"
+      operationId: "crimes_getById"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Crime"
+      x-swagger-router-controller: "Crimes"
+  /deeds:
+    get:
+      tags:
+      - "Deeds"
+      operationId: "deeds_get"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Deed"
+      x-swagger-router-controller: "Deeds"
+    post:
+      tags:
+      - "Deeds"
+      operationId: "deeds_post"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters: []
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Deed"
+      x-swagger-router-controller: "Deeds"
+  /deeds/{id}:
+    get:
+      tags:
+      - "Deeds"
+      operationId: "deeds_getById"
+      consumes: []
+      produces:
+      - "application/json"
+      - "text/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+        format: "int32"
+      responses:
+        200:
+          description: "OK"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Deed"
+      x-swagger-router-controller: "Deeds"
+definitions:
+  Human:
+    type: "object"
+    properties:
+      Id:
+        type: "integer"
+        format: "int32"
+      FirstName:
+        type: "string"
+      MiddleName:
+        type: "string"
+      LastName:
+        type: "string"
+      EmailAddress:
+        type: "string"
+      PhoneNumber:
+        type: "string"
+      Address:
+        type: "string"
+  Crime:
+    type: "object"
+    properties:
+      Id:
+        type: "integer"
+        format: "int32"
+      Name:
+        type: "string"
+      Human:
+        $ref: "#/definitions/Human"
+  Deed:
+    type: "object"
+    properties:
+      Id:
+        type: "integer"
+        format: "int32"
+      Name:
+        type: "string"
+      Human:
+        $ref: "#/definitions/Human"

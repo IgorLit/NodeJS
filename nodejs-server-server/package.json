@@ -1,0 +1,23 @@
+{
+  "name": "contact-list",
+  "version": "v1",
+  "description": "A humans list API based on Swagger and built using NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "swagger"
+  ],
+  "license": "Unlicense",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "connect": "^3.6.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "js-yaml": "^3.8.2",
+    "swagger-tools": "^0.10.1"
+  }
+}
