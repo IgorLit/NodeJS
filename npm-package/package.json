@@ -1,0 +1,15 @@
+{
+  "name": "@litvinovich-igor/git-finder",
+  "version": "1.0.0",
+  "description": "A demo package for lab",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Igor",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/IgorLit/NodeJS.git"
+  },  "dependencies": {
+  "bluebird": "^3.4.7",
+  "needle": "^1.5.0"
+}
+}
