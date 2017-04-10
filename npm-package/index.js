@@ -4,7 +4,7 @@ Promise.promisifyAll(needle);
 
 function getTopRepoByUser(user) {
     return new Promise((resolve, reject) => {
-        needle.getAsync('https://api.github.com/users/' + user + '/repos')
+        needle.getAsync(`https://api.github.com/users/${user}/repos`)
             .then((response) => {
                 let repoArray = [];
                 response.body.every((item, index) => {
@@ -22,7 +22,7 @@ function getTopRepoByUser(user) {
 }
 function findRepoByName(name) {
     return new Promise((resolve, reject) => {
-        needle.getAsync('https://api.github.com/search/repositories?q=' + name)
+        needle.getAsync(`https://api.github.com/search/repositories?q=${name}`)
             .then((response) => {
                 let repoArray = [];
                 response.body.items.every((item, index) => {
@@ -41,7 +41,7 @@ function findRepoByName(name) {
 }
 function getLastCommits(user, repository) {
     return new Promise((resolve, reject) => {
-        needle.getAsync('https://api.github.com/repos/' + user + '/' + repository + '/commits')
+        needle.getAsync(`https://api.github.com/repos/${user }/${repository}/commits`)
             .then((response) => {
                 let repoArray = [];
                 response.body.every((item, index) => {
